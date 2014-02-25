@@ -1,0 +1,23 @@
+<%= render 'layouts/header' %>
+
+<h1 class="center">All Users</h1>
+
+<div class="paginate">
+  <%= will_paginate %>
+</div>
+
+<br>
+<br>
+<br>
+
+<ul class="users center">
+ <%= render @users %>
+</ul>
+
+<div class="paginate">
+  <%= will_paginate %>
+</div>
+<br>
+<br>
+
+<%= render 'layouts/footer' %>

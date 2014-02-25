@@ -1,0 +1,24 @@
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<body id="mapbody" style="margin:0px; padding:0px; border-style: none;" onload="initialize()">
+  <div id="map_canvas" style="width: 829px; height: 370px;"></div>
+  <div style="display:none">
+
+   <%= render '/layouts/voteup', :html => { :id => 'votelink' } %>
+
+   <%= form_for :micropost, :url => { :controller => :microposts, :action => :create }, :html => { :id => 'microformref'}, remote: true do |f| %>
+
+   <div class="center" style="text-align:center">
+     <%= f.select :category, options_for_select(["--Select One--", "Transportation", "News", "Event", "Personal", "Parks/Public Works", "Restaurants", "Shops", "Entertainment", "Healthcare", "Government", "Neighborhood", "Other"], :disabled => "--Select One--", :selected => "--Select One--")%><br>
+
+     <%= f.text_area :content, placeholder: "Write your post...", cols: 15, rows: 5, maxlength: 170 %>
+
+     <div class="btn" id="button">
+       <input type= "button" value="POST" id="formsubmit">
+     </div>
+
+   </div>
+   <% end %>
+ </div>
+</div>
+</body>

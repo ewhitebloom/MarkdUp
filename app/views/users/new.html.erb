@@ -1,0 +1,32 @@
+<%= render '/layouts/header' %>
+
+<h1 class="center">Sign up</h1>
+
+<div align="center">
+ <%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %><br>
+ 
+  <%= f.label :address, "Homebase" %>
+  <%= f.text_field :address, placeholder: "e.g. 123 Main Street, Pleasanttown, MA 01234", size: 47 %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  
+  <%= f.label :password_confirmation, " Password Confirmation" %>
+  <%= f.password_field :password_confirmation %><br>
+  
+  <%= f.submit "Create my account" %>
+
+<% end %>
+
+<%= render '/layouts/footer' %>
+
+</div>
+
+

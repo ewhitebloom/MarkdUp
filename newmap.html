@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+
+<script>
+var map;
+var myCenter=new google.maps.LatLng(40.0452569, -76.33493659999999);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:10,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+  map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    placeMarker(event.latLng);
+  });
+}
+
+function placeMarker(location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: document.getElementById("wrapper")
+  });
+  infowindow.open(map,marker);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+
+<div id="wrapper">
+    <form  method="GET" name="myform">
+    <div align="center" >
+      <select>
+          <option disabled ="disabled" selected="selected">--Select One--</option>
+          <option value    =  "Transportation">Transportation</option>
+          <option value    =  "Personal">Personal</option>
+          <option value    =  "Parks">Parks</option>
+          <option value    =  "Restaurants">Restaurants</option>
+          <option value    =  "Shops">Shops</option>
+          <option value    =  "Government">Government</option>
+          <option value    =  "Neighborhood">Neighborhood</option>
+        </optgroup>
+      </select><br>
+      </div>
+
+      <textarea rows="10" cols="25"></textarea><br>
+
+      <span>
+      <div align="center">
+      <input type="submit" value="Post">
+      <input type ="button" value = "bark!" onclick = "count()" align="center">
+      <input id = "counting" type = "text" size="1" >
+      </span>
+      </div>
+
+
+    </form>
+
+    </div>
+  </div>
+</body>
+</html>

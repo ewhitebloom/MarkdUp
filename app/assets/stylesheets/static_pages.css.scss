@@ -1,0 +1,290 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+/*
+Width: 1000px
+# Columns : 12
+Column width: 65px
+Gutter : 20px
+
+*/
+.grid_1 { width: 65px; }
+.grid_2 { width: 150px; }
+.grid_3 { width: 235px; }
+.grid_4 { width: 320px; }
+.grid_5 { width: 405px; }
+.grid_6 { width: 490px; }
+.grid_7 { width: 575px; }
+.grid_8 { width: 660px; }
+.grid_9 { width: 745px; }
+.grid_10 { width: 830px; }
+.grid_11 { width: 915px; }
+.grid_12 { width: 1000px; }
+.grid_13 { width: 1100px;}
+.grid_12 {
+margin: 0 20px 10px 0;
+float: left;
+}
+.margintop{margin-top:10px;}
+
+.container{
+width: 1100px;
+margin:auto;
+background: #DBFFED;
+}
+
+#toggle{
+margin-top:15px;
+margin: 10px;
+}
+
+
+.listcontainer{
+margin: auto;
+align: center;
+}
+
+#listdiv {
+display: none;
+}
+
+#togglecomments {
+display: none;
+}
+
+.automargin {
+margin: auto;
+}
+
+.togglecomments {
+display:none;
+}
+
+#toggleform {
+display:none;
+}
+
+#commenttoggle {
+margin-top: 15px;
+}
+
+#listheader {
+color:#8ddfb7;
+text-shadow: 0px 1px #E2E3DE;
+margin:28px;
+border-color: #86E7B5;
+}
+
+#generalform{
+padding: 3px 3px 3px 3px;
+background: #daffe7;
+border-style: hidden;
+border-radius: 8px;
+border-width: 1px;
+border-color: #E2E3DE;
+margin-bottom: 31px;
+box-shadow: 0px 0px 25px #E2E3DE;
+}
+
+body {
+font-family: 'Ubuntu', sans-serif;
+color: black;
+border-style: none;
+background: #e0f9ed ;
+}
+
+a {
+color: #69F0BA;
+text-decoration: none;
+
+}
+
+#listview {
+color:#aff68c;
+margin:31px;
+border-color: #86E7B5;
+position: absolute;
+border-style: hidden;
+}
+
+a:not(#headline):hover {
+background: #69F0BA;
+color: white;
+}
+
+#headline {
+
+&:hover{
+background: none;
+}
+}
+
+.center {
+text-align: center;
+}
+
+h1 {
+font-size: 1.750em;
+letter-spacing: -1.5px;
+}
+
+h2 {
+font-size: 1.500em;
+color: #B4C34F;
+}
+
+.btn {
+color: #FAF3BC;
+border-radius: 2px;
+text-transform: uppercase;
+
+}
+
+#infocss {
+text-align: center;
+align: bottom;
+}
+
+#categorycss {
+font-weight: bold;
+font-size: 105%;
+margin-left: 7px;
+margin-right: 7px;
+}
+
+#contentcss {
+color: black;
+margin-top: 7px;
+}
+
+#listpostcontent {
+margin-top: 5px;
+margin-bottom: 5px;
+background: #efefef;
+border-radius: 5px;
+border-style: none;
+}
+
+input[type="submit"]
+{
+margin-bottom:9px;
+}
+
+
+.marginb {
+margin-bottom:1px;
+}
+
+.horizontal li {
+list-style: none;
+padding: 10px;
+float: left;
+}
+
+.paginate li {
+list-style: none;
+margin: 10px;
+float: left;
+padding:10px;
+}
+
+.left {
+float:left;
+}
+
+#loader {
+position: fixed;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+z-index: 9999;
+background: url('/assets/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+.right {
+float: right;
+}
+
+#listview {
+float:right;
+}
+
+hr {
+style: solid;
+color: black;
+border-bottom: .5px solid;
+background: black;
+}
+
+ul.nav li {
+float: left;
+margin-right: 40px;
+}
+
+
+
+.border {
+border: 2px solid;
+color: #86E7B5;
+border-radius: 5px;
+padding: 1px;
+}
+
+.noborder {
+borderStyle: hidden;
+}
+
+#microformsubmit {
+padding: 3px 3px;
+border-radius: 3px;
+border: 0 none;
+margin-top: 10px;
+color: white;
+background-color: #ccc;
+text-align: center;
+align: bottom;
+
+&:hover {
+background-color: #8EE0AA;
+border-color: gray;
+}
+}
+
+#votelink {
+padding: 3px 3px ;
+border-radius: 3px;
+border: 0 none;
+margin-top: 10px;
+color: white;
+background-color: #ccc;
+
+&:hover {
+background-color: #8EE0AA;
+border-color: gray;
+}
+}
+
+.users {
+list-style: none;
+
+ul.li{
+margin: 10px;
+padding:10px;
+}
+}
+
+#votestyle {
+float: right;
+align: bottom;
+font-weight: bold;
+border-style: solid;
+border-color: #E2E3DE;
+border-width: 1px;
+border-radius: 3px;
+padding: 0px 3px 0px 3px;
+margin-left: 10px;
+margin-top: 10px;
+margin-bottom: 3px;
+}

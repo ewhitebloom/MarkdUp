@@ -1,0 +1,20 @@
+<%= render '/layouts/header' %>
+
+<h1 class="center">Sign in</h1>
+<div class="center">
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <%= f.submit "Sign in" %>
+
+  <% end %>
+
+  <p>New user? <%= link_to "Sign up now!", "/signup" %></p>
+  <%= render 'layouts/footer' %>
+</div>

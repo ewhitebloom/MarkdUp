@@ -1,0 +1,50 @@
+<div id="listdiv" class="right">
+  <iframe id="listview" class ="grid_5" height="592" src=<%="/list"%>>
+  </iframe>
+</div>
+
+<div>
+  <%=render '/layouts/header' %>
+</div>
+
+<script>
+ $(document).ready(function(){
+  $("#map").hide().fadeIn(3180);
+  $("#headline").hide().fadeIn(1500);
+  $("#subtitle").hide().fadeIn(1500);
+});
+</script>
+
+<% if signed_in? %>
+
+<div class="center grid_13">
+  <%= link_to image_tag("/assets/logo.png"), root_path, html: { style: 'margin-top:10px; margin-bottom:0px;', id: "headline" }%>
+
+  <h6 id="subtitle" style='margin-bottom:23px; margin-top:0px;'>[geo-social]</h6>
+
+  <iframe id="map" class="grid_10 border" height="370"  src=<%="/static_pages/map" %>>
+  </iframe>
+
+  <div style="margin-top:15px; margin: 10px;">
+    <input type="button" value="Toggle List View" id="toggle"></input>
+  </div>
+
+  <script>
+    $('#toggle').click( function() {
+      $('#listdiv').toggle(1000);
+    });
+  </script>
+
+  <% else %>
+
+  <div class= 'center'>
+    <h1>Welcome to MarkdUp!</h1>
+    <h3> Please <%= link_to "Sign in", '/signin', remote: false %> or <%= link_to "Sign up", '/signup', remote: false %> </h3>
+    <% end %>
+
+    <h5 style='margin-top:16px;'>
+      &copy; 2014 Eric Whitebloom
+    </h5>
+  </div>
+
+</div>
