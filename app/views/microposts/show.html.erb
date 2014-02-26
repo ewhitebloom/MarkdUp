@@ -46,7 +46,7 @@
       <%= time_ago_in_words(m.created_at) + ' ago' %><br>
 
       <%= content_tag_for(:button, m, class: "toggle-comments button") do %>
-        <%= "Show #{m.comments.count} Comments" %>
+        <%= "Toggle #{m.comments.count} Comments" %>
       <% end %>
 
       <div class="comments comments-hidden">
