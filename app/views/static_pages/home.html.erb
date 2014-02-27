@@ -3,9 +3,7 @@
   </iframe>
 </div>
 
-<div>
-  <%=render 'layouts/header' %>
-</div>
+<%=render 'layouts/header' %>
 
 <% if signed_in? %>
 
@@ -21,11 +19,11 @@
     <input type="button" value="Toggle List View" id="toggle"></input>
   </div>
 
-<script>
-  $('#toggle').click( function() {
-  $('#listdiv').toggle(1000);
-});
-</script>
+  <script>
+    $('#toggle').click( function() {
+      $('#listdiv').toggle(1000);
+    });
+  </script>
 
   <% else %>
 
