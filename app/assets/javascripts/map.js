@@ -1,5 +1,11 @@
 // Add chatroom feature, with ability to IM people within certain radius of you?
 // Ability to comment on a post. Perhaps if you click on the map post, it would direct you to the list-view, where you could comment on the post?
+$(document).ready(function(){
+  $("#map").hide().fadeIn(3180);
+  $("#headline").hide().fadeIn(1500);
+  $("#subtitle").hide().fadeIn(1500);
+});
+
 var map;
 var markersArray = [];
 var markers=[];

@@ -4,16 +4,8 @@
 </div>
 
 <div>
-  <%=render '/layouts/header' %>
+  <%=render 'layouts/header' %>
 </div>
-
-<script>
- $(document).ready(function(){
-  $("#map").hide().fadeIn(3180);
-  $("#headline").hide().fadeIn(1500);
-  $("#subtitle").hide().fadeIn(1500);
-});
-</script>
 
 <% if signed_in? %>
 
@@ -29,11 +21,11 @@
     <input type="button" value="Toggle List View" id="toggle"></input>
   </div>
 
-  <script>
-    $('#toggle').click( function() {
-      $('#listdiv').toggle(1000);
-    });
-  </script>
+<script>
+  $('#toggle').click( function() {
+  $('#listdiv').toggle(1000);
+});
+</script>
 
   <% else %>
 
