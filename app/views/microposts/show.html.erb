@@ -1,70 +1,13 @@
 <div id="microshow">
   <div class="center grid_4">
 
-    <div id="generalform">
-      <h3>Write a general-area post:</h3>
-      <%= form_for :micropost, :url => { :controller => :microposts, :action => :create }, :html => { :id => 'microformref'}, remote: true do |f| %>
-
-      <div class="center" style="text-align:center">
-       <%= f.select :category, options_for_select(["--Select One--", "Transportation", "News", "Event", "Personal", "Parks/Public Works", "Restaurants", "Shops", "Entertainment", "Healthcare", "Government", "Neighborhood", "Other"], :disabled => "--Select One--", :selected => "--Select One--")%><br>
-
-       <%= f.text_field :address, placeholder: "Location: City, State . ", size: 20, maxlength: 20 %><br>
-
-       <%= f.text_area :content, placeholder: "Write your post...", cols: 15, rows: 5, maxlength: 170 %><br>
-
-       <%= f.submit "POST" %><br>
-
-     </div>
-     <% end %>
-   </div>
+   <%= render 'generalpost' %>
 
    <hr width="90px">
 
    <h2 id="listheader" class="border">Your Local Posts:</h2>
-
-   <% @microposts.each do |m| %>
-     <%= content_tag_for(:div, m) do %>
-      <div style="color:#3BCC51;">
-        <strong>
-          <%= m.category %>
-        </strong>
-        <br>
-      </div>
-
-      <div id="listpostcontent">
-        <%= m.content %><br>
-      </div>
-
-      <%= m.address %><br>
-
-      <div style="color: #ee514e">
-        <%= m.votes_for %><br>
-      </div>
-
-      <%= button_to "Vote Up", '/microposts/' + m.id.to_s + '/vote_up' , :method => "post" %>
-
-      <%= time_ago_in_words(m.created_at) + ' ago' %><br>
-
-      <%= content_tag_for(:button, m, class: "toggle-comments button") do %>
-        <%= "Toggle #{m.comments.count} Comments" %>
-      <% end %>
-
-      <div class="comments comments-hidden">
-        <h3 style="color:#3BCC51;">Comments</h3>
-        <% m.comments.each do |comment| %>
-          <p>
-            <%= comment.commenter %>
-          </p>
-
-          <p class="comment-body">
-            <%= comment.body %>
-          </p>
-        <% end %>
-
-        <%= render 'microposts/commentform', micropost: m %>
-        </div>
-      <% end %>
-      <hr style="width: 300px;">
-    <% end %>
+   <%= render 'comments' %>
   </div>
 </div>
+
+

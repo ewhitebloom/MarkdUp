@@ -17,6 +17,10 @@ class MicropostsController < ApplicationController
   end
 end
 
+def home
+  @microposts = Micropost.where(:user_id => current_user.id).paginate(:page => params[:page])
+end
+
 def vote_up
  @vote = Vote.new(params[:vote])
  @vote.voteable = Micropost.find(params[:id])
@@ -39,13 +43,13 @@ def votes_for
 end
 
 def show
- @microposts = Micropost.all
- respond_to do |format|
-  format.html
-  format.json { render json: @microposts.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
+  @microposts = Micropost.all
+  # @microposts = Micropost.paginate(:page => params[:page])
+  respond_to do |format|
+    format.html
+    format.json { render json: @microposts.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
+  end
 end
-end
-
 
 def destroy
   @micropost.destroy

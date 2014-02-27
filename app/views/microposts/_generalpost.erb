@@ -1,0 +1,16 @@
+ <div id="generalform">
+      <h3>Write a general-area post:</h3>
+      <%= form_for :micropost, :url => { :controller => :microposts, :action => :create }, :html => { :id => 'microformref'}, remote: true do |f| %>
+
+      <div class="center" style="text-align:center">
+       <%= f.select :category, options_for_select(["--Select One--", "Transportation", "News", "Event", "Personal", "Parks/Public Works", "Restaurants", "Shops", "Entertainment", "Healthcare", "Government", "Neighborhood", "Other"], :disabled => "--Select One--", :selected => "--Select One--")%><br>
+
+       <%= f.text_field :address, placeholder: "Location: City, State . ", size: 20, maxlength: 20 %><br>
+
+       <%= f.text_area :content, placeholder: "Write your post...", cols: 15, rows: 5, maxlength: 170 %><br>
+
+       <%= f.submit "POST" %><br>
+
+     </div>
+     <% end %>
+   </div>
