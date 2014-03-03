@@ -19,7 +19,7 @@
 
       <%= button_to "Vote Up", '/microposts/' + m.id.to_s + '/vote_up' , :method => "post" %>
 
-      <%= time_ago_in_words(m.created_at) + ' ago' %><br>
+      <div id="time_ago"><%= time_ago_in_words(m.created_at) + ' ago' %></div>
 
       <%= content_tag_for(:button, m, class: "toggle-comments button") do %>
         <%= "Toggle #{m.comments.count} Comments" %>

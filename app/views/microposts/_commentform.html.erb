@@ -1,4 +1,4 @@
-  <%= form_for ([micropost, micropost.comments.build]) do |f| %>
+  <%= form_for ([micropost, micropost.comments.build]), remote: true do |f| %>
   <h3>Add a comment:</h3>
     <%= f.hidden_field :commenter, value: current_user.name %>
   <p>

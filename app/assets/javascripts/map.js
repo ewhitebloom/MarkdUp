@@ -61,7 +61,6 @@ $.getJSON("/microposts/show.json", {}, function(json){
     }
   });
 
-
   $.each(json, function(i,item){
     $("#markers").append();
 
@@ -80,8 +79,10 @@ $.getJSON("/microposts/show.json", {}, function(json){
     markers[i] = marker;
 
     $.getJSON('/microposts/' + item.id + '/votes_for.json', {}, function(votedata){
-      if (votedata > 2){
-        $('#currenticon').css({"box-shadow":"0px 0px 10px"});
+      if (votedata > 1) {
+        var $currentIcon = $("#currenticon");
+        debugger;
+        $currenticon.addClass('.marker_glow');
       }
 
       var contentstring = '<div id="infocss">' + '<div id="categorycss">' + item.category + '</div>' + '<div id="contentcss">' + item.content + '</div>' + '<div id="votestyle">' + votedata + '</div>' + votingref.outerHTML + '</div>';
