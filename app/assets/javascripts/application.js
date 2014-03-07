@@ -10,5 +10,6 @@
 //= require jquery
 //= require jquery.inview.min.js
 //= require jquery.ui.all
+//= require turbolinks
 //= require_tree .
 */
