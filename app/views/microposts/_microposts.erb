@@ -1,0 +1,4 @@
+<h2 id="listheader" class="border">Your Local Posts:</h2>
+   <%= render 'comments' %>
+
+   <%= link_to 'Load More Posts', list_path(:page => @microposts.next_page), class: 'load-more-posts', :remote => true if @microposts.next_page %>

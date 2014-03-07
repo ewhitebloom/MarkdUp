@@ -43,8 +43,8 @@ def votes_for
 end
 
 def show
-  @microposts = Micropost.all
-  # @microposts = Micropost.paginate(:page => params[:page])
+  # @microposts = Micropost.all
+  @microposts = Micropost.paginate(:page => params[:page])
   respond_to do |format|
     format.html
     format.json { render json: @microposts.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }

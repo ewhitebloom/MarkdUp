@@ -1,0 +1,3 @@
+$('.microposts').append('#{escape_javascript(render partial: "microposts/microposts", :locals => { :microposts => @microposts })}');
+$('a.load-more-posts').attr('href', '#{list_path page: @microposts.next_page}');
+
