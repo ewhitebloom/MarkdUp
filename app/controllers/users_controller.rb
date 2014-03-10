@@ -31,7 +31,6 @@ class UsersController < ApplicationController
    if signed_in?
      sign_out
    end
-
    @user = User.new(params[:user])
    if @user.save
      sign_in @user
@@ -40,7 +39,6 @@ class UsersController < ApplicationController
    else
      render 'new'
    end
-
  end
 
  def index
