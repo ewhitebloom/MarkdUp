@@ -81,7 +81,6 @@ $.getJSON("/microposts/show.json", {}, function(json){
     $.getJSON('/microposts/' + item.id + '/votes_for.json', {}, function(votedata){
       if (votedata > 1) {
         var $currentIcon = $("#currenticon");
-        debugger;
         $currenticon.addClass('.marker_glow');
       }
 
