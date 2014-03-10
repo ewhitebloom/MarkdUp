@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20140126015844) do
     t.string   "name"
     t.string   "email"
     t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
