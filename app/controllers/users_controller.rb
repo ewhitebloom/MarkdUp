@@ -1,12 +1,20 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :address]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
   def show
   	@user = User.find(params[:id])
+  end
+
+  def address
+    location = [current_user.latitude, current_user.longitude]
+    respond_to do |format|
+      format.html
+      format.json { render json: location.as_json}
+    end
   end
 
   def new

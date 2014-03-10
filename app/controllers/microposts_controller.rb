@@ -43,10 +43,10 @@ def votes_for
 end
 
 def show
-  location = current_user.address
+  location = Micropost.near([current_user.latitude, current_user.longitude],0.5)
   respond_to do |format|
-    format.html { @microposts = Micropost.paginate(:page => params[:page]) }
-    format.json { @microposts = Micropost.all; render json: @microposts.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
+    format.html { @microposts = location.paginate(:page => params[:page]) }
+    format.json { @microposts = location; render json: @microposts.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
   end
 end
 

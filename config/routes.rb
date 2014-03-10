@@ -17,6 +17,7 @@ Bark::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: :all
   match '/signout', to: 'sessions#destroy', via: :all
   match '/list', to: 'microposts#show', via: :all
+  match '/address', to: 'users#address', via: :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

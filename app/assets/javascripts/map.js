@@ -108,51 +108,29 @@ function initialize() {
     var mapOptions = {
       zoom: 14
     };
+
     map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = new google.maps.LatLng(position.coords.latitude,
-          position.coords.longitude);
+    $.getJSON('/address.json', {}, function(location){
 
-        var currentlocation = new google.maps.Marker({
-          map: map,
-          position: pos,
-          icon: '/assets/blue_dot.png'
-        });
+     var address = new google.maps.LatLng(location[0],location[1]);
 
-        map.setCenter(pos);
-      }, function() {
-        handleNoGeolocation(true);
-      });
-    } else {
+     var currentlocation = new google.maps.Marker({
+      map: map,
+      position: address,
+      icon: '/assets/blue_dot.png'
+    });
 
-      handleNoGeolocation(false);
-    }
+     map.setCenter(address);
+   });
 
     google.maps.event.addListener(map, 'click', function(event) {
       createMarker(event.latLng, "markername");
-
     });
+
     getmarkersvoting();
   });
-}
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    var content = 'Error: The Geolocation service failed. Please reload page.';
-  } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
-  }
-
-  var options = {
-    map: map,
-    position: new google.maps.LatLng(42.360881, -71.060772),
-    content: content
-  };
-
-  var infowindow = new google.maps.InfoWindow(options);
-  map.setCenter(options.position);
 }
 
 function createMarker(latlng, name) {
