@@ -11,8 +11,8 @@ class Micropost < ActiveRecord::Base
 
   self.per_page = 10
 
-    reverse_geocoded_by :latitude, :longitude
-    after_validation :reverse_geocode
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 
   acts_as_voteable
 
