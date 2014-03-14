@@ -4,9 +4,10 @@
    <%= render 'generalpost' %>
 
    <hr width="90px">
-
+  <%= paginate @microposts %>
   <%= render 'microposts' %>
+  <%= paginate @microposts %>
   </div>
 </div>
 
-<%= paginate @microposts %>
+

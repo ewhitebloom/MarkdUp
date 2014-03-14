@@ -45,7 +45,7 @@ end
 def show
  location = Micropost.near([current_user.latitude, current_user.longitude],1)
  respond_to do |format|
-  format.html { @microposts = location.order(:created_at).page(params[:page]) }
+  format.html { @microposts = location.page(params[:page]) }
   format.json { render json: location.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
 end
 end
