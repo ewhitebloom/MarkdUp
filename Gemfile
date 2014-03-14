@@ -28,7 +28,6 @@ gem 'actionpack-action_caching'
 gem 'activerecord-deprecated_finders'
 gem 'minitest', '~>4.2.0'
 
-gem 'sqlite3'
 gem 'rspec-rails'
 gem 'guard-rspec'
 gem 'annotate'
