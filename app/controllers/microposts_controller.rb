@@ -43,10 +43,11 @@ def votes_for
 end
 
 def show
-   @microposts = Micropost.near([current_user.latitude, current_user.longitude],1)
+   location = Micropost.near([current_user.latitude, current_user.longitude],1)
+   @microposts = Micropost.order(:created_at).page(params[:page])
   respond_to do |format|
-    format.html
-    format.json { render json: @microposts.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
+    format.html { @microposts }
+    format.json { render json: location.as_json(only: [:category, :content, :address, :latitude, :longitude, :created_at, :id])  }
   end
 end
 

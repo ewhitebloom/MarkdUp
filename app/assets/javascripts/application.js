@@ -16,3 +16,4 @@
     $('#toggle').click( function() {
       $('#listdiv').toggle(1000);
     });
+//= require jquery.infinitescroll

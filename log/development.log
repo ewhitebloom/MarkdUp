@@ -29461,3 +29461,1351 @@ Processing by MicropostsController#votes_for as JSON
   [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "1"]]
   [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 1], ["voteable_type", "Micropost"]]
 Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-14 10:54:08 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:08 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:08 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:08 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:08 -0400
+
+
+Started GET "/list" for 127.0.0.1 at 2014-03-14 10:54:08 -0400
+Processing by MicropostsController#show as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  Rendered microposts/_generalpost.erb (2.8ms)
+  [1m[35mMicropost Load (2.5ms)[0m  SELECT microposts.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((42.3965012 - microposts.latitude) * PI() / 180 / 2), 2) + COS(42.3965012 * PI() / 180) * COS(microposts.latitude * PI() / 180) * POWER(SIN((-71.1037517 - microposts.longitude) * PI() / 180 / 2), 2))) AS distance, CAST(DEGREES(ATAN2( RADIANS(microposts.longitude - -71.1037517), RADIANS(microposts.latitude - 42.3965012))) + 360 AS decimal) % 360 AS bearing FROM "microposts" WHERE (microposts.latitude BETWEEN 42.38202802168892 AND 42.41097437831109 AND microposts.longitude BETWEEN -71.12334986735648 AND -71.08415353264353 AND 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((42.3965012 - microposts.latitude) * PI() / 180 / 2), 2) + COS(42.3965012 * PI() / 180) * COS(microposts.latitude * PI() / 180) * POWER(SIN((-71.1037517 - microposts.longitude) * PI() / 180 / 2), 2))) <= 1) ORDER BY microposts.created_at DESC, distance ASC
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 38], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 38]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 38]]
+  Rendered microposts/_commentform.html.erb (1.9ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 37], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 37]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 37]]
+  Rendered microposts/_commentform.html.erb (2.8ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 36], ["voteable_type", "Micropost"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 36]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 36]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 35], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 35]]
+  [1m[35mComment Load (0.7ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 35]]
+  Rendered microposts/_commentform.html.erb (1.7ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 34], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 34]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 34]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 33], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 33]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 33]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 32], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 32]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 32]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 31], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 31]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 31]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 30], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 30]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 30]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 29], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 29]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 29]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 28], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 28]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 28]]
+  Rendered microposts/_commentform.html.erb (1.8ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 27], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 27]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 27]]
+  Rendered microposts/_commentform.html.erb (1.9ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 26], ["voteable_type", "Micropost"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 26]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 26]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 25], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 25]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 25]]
+  Rendered microposts/_commentform.html.erb (91.0ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 24], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 24]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 24]]
+  Rendered microposts/_commentform.html.erb (2.0ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 23], ["voteable_type", "Micropost"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 23]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 23]]
+  Rendered microposts/_commentform.html.erb (2.3ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 22], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 22]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 22]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 21], ["voteable_type", "Micropost"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 21]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 21]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 20], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 20]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 20]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 19], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 19]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 19]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 18], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 18]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 18]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 17], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 17]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 17]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 16], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 16]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 16]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 15], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 15]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 15]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 14], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 14]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 14]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 13], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 13]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 13]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 12], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 12]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 12]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 11], ["voteable_type", "Micropost"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 11]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 11]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 10], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 10]]
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 10]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 9], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 9]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 9]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 7], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 7]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 7]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 5], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 5]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 5]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 4], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 4]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 4]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 3], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 3]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 3]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 1], ["voteable_type", "Micropost"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 1]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  Rendered microposts/_comments.erb (419.6ms)
+  Rendered microposts/_microposts.erb (420.5ms)
+  Rendered microposts/show.html.erb within layouts/microposts (426.0ms)
+Completed 200 OK in 453ms (Views: 406.5ms | ActiveRecord: 42.3ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/static_pages/map" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+Processing by StaticPagesController#map as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  Rendered layouts/_voteup.html.erb (0.1ms)
+  Rendered microposts/_mapform.erb (1.5ms)
+  Rendered static_pages/map.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.button.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:09 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/commenttoggle.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/map.js" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/assets/jquery.ui.button.js?body=1" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+
+
+Started GET "/address.json" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+Processing by UsersController#address as JSON
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/show.json" for 127.0.0.1 at 2014-03-14 10:54:10 -0400
+Processing by MicropostsController#show as JSON
+  Parameters: {"id"=>"show"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (2.4ms)[0m  [1mSELECT microposts.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((42.3965012 - microposts.latitude) * PI() / 180 / 2), 2) + COS(42.3965012 * PI() / 180) * COS(microposts.latitude * PI() / 180) * POWER(SIN((-71.1037517 - microposts.longitude) * PI() / 180 / 2), 2))) AS distance, CAST(DEGREES(ATAN2( RADIANS(microposts.longitude - -71.1037517), RADIANS(microposts.latitude - 42.3965012))) + 360 AS decimal) % 360 AS bearing FROM "microposts" WHERE (microposts.latitude BETWEEN 42.38202802168892 AND 42.41097437831109 AND microposts.longitude BETWEEN -71.12334986735648 AND -71.08415353264353 AND 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((42.3965012 - microposts.latitude) * PI() / 180 / 2), 2) + COS(42.3965012 * PI() / 180) * COS(microposts.latitude * PI() / 180) * POWER(SIN((-71.1037517 - microposts.longitude) * PI() / 180 / 2), 2))) <= 1) ORDER BY microposts.created_at DESC, distance ASC[0m
+Completed 200 OK in 23ms (Views: 7.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/microposts/38/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"38"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "38"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 38], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/37/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "37"]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 37], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/microposts/36/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"36"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.6ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "36"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 36], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/32/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "32"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 32], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/microposts/31/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"31"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "31"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 31], ["voteable_type", "Micropost"]]
+Completed 200 OK in 413ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/microposts/35/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"35"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "35"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 35], ["voteable_type", "Micropost"]]
+Completed 200 OK in 183ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/34/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"34"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "34"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 34], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/33/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:11 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "33"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 33], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/30/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"30"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "30"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 30], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/microposts/29/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "29"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 29], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/28/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"28"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "28"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 28], ["voteable_type", "Micropost"]]
+Completed 200 OK in 106ms (Views: 0.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/microposts/27/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.7ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "27"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 27], ["voteable_type", "Micropost"]]
+Completed 200 OK in 82ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/microposts/26/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"26"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "26"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 26], ["voteable_type", "Micropost"]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/25/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "25"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 25], ["voteable_type", "Micropost"]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/microposts/24/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 24], ["voteable_type", "Micropost"]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/23/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.7ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "23"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 23], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/21/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"21"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "21"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 21], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/22/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "22"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 22], ["voteable_type", "Micropost"]]
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/20/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"20"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "20"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 20], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/microposts/19/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.6ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "19"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 19], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/microposts/18/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (28.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (2.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "18"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 18], ["voteable_type", "Micropost"]]
+Completed 200 OK in 38ms (Views: 0.1ms | ActiveRecord: 31.6ms)
+
+
+Started GET "/microposts/17/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "17"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 17], ["voteable_type", "Micropost"]]
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/microposts/16/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"16"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.6ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "16"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 16], ["voteable_type", "Micropost"]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/microposts/15/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "15"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 15], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/microposts/14/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (1.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "14"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 14], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/microposts/13/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "13"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 13], ["voteable_type", "Micropost"]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/microposts/12/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (59.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (25.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 12], ["voteable_type", "Micropost"]]
+Completed 200 OK in 126ms (Views: 0.1ms | ActiveRecord: 85.3ms)
+
+
+Started GET "/microposts/11/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "11"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 11], ["voteable_type", "Micropost"]]
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/10/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 10], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/microposts/9/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "9"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 9], ["voteable_type", "Micropost"]]
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/5/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:12 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.9ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "5"]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 5], ["voteable_type", "Micropost"]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/microposts/7/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:13 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "7"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 7], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/microposts/4/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:13 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.7ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 4], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/microposts/3/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:13 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.7ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "3"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 3], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/1/votes_for.json" for 127.0.0.1 at 2014-03-14 10:54:13 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 1], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-14 10:59:24 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 300ms (Views: 260.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:24 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:24 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:24 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:24 -0400
+
+
+Started GET "/list" for 127.0.0.1 at 2014-03-14 10:59:24 -0400
+Processing by MicropostsController#show as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+DEPRECATION WARNING: Calling #scope or #default_scope with a hash is deprecated. Please use a lambda containing a scope. E.g. scope :red, -> { where(color: 'red') }. (called from <class:Micropost> at /Users/Eric/Google Drive/MarkdUp/app/models/micropost.rb:17)
+  Rendered microposts/_generalpost.erb (4.7ms)
+  [1m[36mMicropost Load (1.1ms)[0m  [1mSELECT "microposts".* FROM "microposts" ORDER BY microposts.created_at DESC, "microposts"."created_at" ASC LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "microposts"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 38], ["voteable_type", "Micropost"]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 38]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 38]]
+  Rendered microposts/_commentform.html.erb (11.3ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 37], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 37]]
+  [1m[35mComment Load (0.8ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 37]]
+  Rendered microposts/_commentform.html.erb (1.7ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 36], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 36]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 36]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (2.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 35], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 35]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 35]]
+  Rendered microposts/_commentform.html.erb (2.2ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 34], ["voteable_type", "Micropost"]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 34]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 34]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 33], ["voteable_type", "Micropost"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 33]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 33]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 32], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 32]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 32]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 31], ["voteable_type", "Micropost"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 31]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 31]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 30], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 30]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 30]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 29], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 29]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 29]]
+  Rendered microposts/_commentform.html.erb (1.7ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 28], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 28]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 28]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 27], ["voteable_type", "Micropost"]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 27]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 27]]
+  Rendered microposts/_commentform.html.erb (1.7ms)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 26], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 26]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 26]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 25], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 25]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 25]]
+  Rendered microposts/_commentform.html.erb (1.6ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 24], ["voteable_type", "Micropost"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 24]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 24]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 23], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 23]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 23]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 22], ["voteable_type", "Micropost"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 22]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 22]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 21], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 21]]
+  [1m[35mComment Load (0.8ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 21]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 20], ["voteable_type", "Micropost"]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 20]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 20]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 19], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 19]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 19]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 18], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 18]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 18]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 17], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 17]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 17]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 16], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 16]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 16]]
+  Rendered microposts/_commentform.html.erb (2.3ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 15], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 15]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 15]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 14], ["voteable_type", "Micropost"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 14]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 14]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 13], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 13]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 13]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 12], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 12]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 12]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 11], ["voteable_type", "Micropost"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 11]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 11]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 10], ["voteable_type", "Micropost"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 10]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 10]]
+  Rendered microposts/_commentform.html.erb (1.5ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 9], ["voteable_type", "Micropost"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."micropost_id" = $1[0m  [["micropost_id", 9]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."micropost_id" = $1  [["micropost_id", 9]]
+  Rendered microposts/_commentform.html.erb (1.4ms)
+  Rendered microposts/_comments.erb (363.7ms)
+  Rendered microposts/_microposts.erb (364.9ms)
+  Rendered microposts/show.html.erb within layouts/microposts (569.3ms)
+Completed 500 Internal Server Error in 633ms
+
+ActionView::Template::Error (undefined method `paginate' for #<#<Class:0x000001035bf5a0>:0x000001035bd6d8>):
+     8:   <%= render 'microposts' %>
+     9:   </div>
+    10: </div>
+    11: <%= paginate @microposts %>
+  app/views/microposts/show.html.erb:11:in `_app_views_microposts_show_html_erb__4249924798440398296_2175676980'
+
+
+  Rendered /Users/Eric/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/Eric/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/Eric/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.3ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/static_pages/map" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+Processing by StaticPagesController#map as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  Rendered layouts/_voteup.html.erb (0.1ms)
+  Rendered microposts/_mapform.erb (4.3ms)
+  Rendered static_pages/map.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 76ms (Views: 68.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.ui.accordion.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.ui.menu.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.ui.position.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.ui.autocomplete.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:25 -0400
+
+
+Started GET "/assets/jquery.ui.button.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.mouse.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.draggable.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.resizable.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.dialog.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.droppable.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-bounce.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-blind.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-clip.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-drop.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-explode.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fade.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-fold.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-highlight.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-pulsate.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-scale.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-shake.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-slide.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.effect-transfer.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.progressbar.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.selectable.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.slider.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.sortable.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.spinner.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.tabs.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.tooltip.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.all.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/commenttoggle.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/microposts.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/map.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/map.js" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/assets/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2014-03-14 10:59:26 -0400
+
+
+Started GET "/address.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by UsersController#address as JSON
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/microposts/show.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#show as JSON
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (2.0ms)[0m  SELECT microposts.*, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((42.3965012 - microposts.latitude) * PI() / 180 / 2), 2) + COS(42.3965012 * PI() / 180) * COS(microposts.latitude * PI() / 180) * POWER(SIN((-71.1037517 - microposts.longitude) * PI() / 180 / 2), 2))) AS distance, CAST(DEGREES(ATAN2( RADIANS(microposts.longitude - -71.1037517), RADIANS(microposts.latitude - 42.3965012))) + 360 AS decimal) % 360 AS bearing FROM "microposts" WHERE (microposts.latitude BETWEEN 42.38202802168892 AND 42.41097437831109 AND microposts.longitude BETWEEN -71.12334986735648 AND -71.08415353264353 AND 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((42.3965012 - microposts.latitude) * PI() / 180 / 2), 2) + COS(42.3965012 * PI() / 180) * COS(microposts.latitude * PI() / 180) * POWER(SIN((-71.1037517 - microposts.longitude) * PI() / 180 / 2), 2))) <= 1) ORDER BY microposts.created_at DESC, distance ASC
+Completed 200 OK in 25ms (Views: 7.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/microposts/36/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"36"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "36"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 36], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/microposts/38/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"38"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.7ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "38"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 38], ["voteable_type", "Micropost"]]
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/37/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"37"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "37"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 37], ["voteable_type", "Micropost"]]
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/35/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"35"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "35"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 35], ["voteable_type", "Micropost"]]
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/34/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "34"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 34], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/33/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"33"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "33"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 33], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/32/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "32"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 32], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/31/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"31"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "31"]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 31], ["voteable_type", "Micropost"]]
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/microposts/30/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"30"}
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.7ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "30"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 30], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/microposts/29/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"29"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "29"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 29], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/28/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "28"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 28], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/27/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"27"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.6ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "27"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 27], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/26/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "26"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 26], ["voteable_type", "Micropost"]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/25/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"25"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "25"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 25], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/24/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "24"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 24], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/23/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"23"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "23"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 23], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/22/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "22"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 22], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/21/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:27 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"21"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "21"]]
+  [1m[35m (1.8ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 21], ["voteable_type", "Micropost"]]
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/microposts/20/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"20"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "20"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 20], ["voteable_type", "Micropost"]]
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/19/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"19"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "19"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 19], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/18/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "18"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 18], ["voteable_type", "Micropost"]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/17/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"17"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "17"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 17], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/16/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "16"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 16], ["voteable_type", "Micropost"]]
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/15/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "15"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 15], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/microposts/14/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "14"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 14], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/microposts/13/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.4ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "13"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 13], ["voteable_type", "Micropost"]]
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/microposts/12/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "12"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 12], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/microposts/11/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (5.2ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "11"]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 11], ["voteable_type", "Micropost"]]
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/microposts/10/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (6.1ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "10"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 10], ["voteable_type", "Micropost"]]
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/microposts/9/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "9"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 9], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/microposts/7/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "7"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 7], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/5/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.7ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "5"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 5], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/microposts/4/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.4ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "4"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 4], ["voteable_type", "Micropost"]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/microposts/3/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1
+  [1m[36mMicropost Load (0.5ms)[0m  [1mSELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'  [["voteable_id", 3], ["voteable_type", "Micropost"]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/microposts/1/votes_for.json" for 127.0.0.1 at 2014-03-14 10:59:28 -0400
+Processing by MicropostsController#votes_for as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'ZgyH_MsRCF4BB6VHaDOa5Q' LIMIT 1[0m
+  [1m[35mMicropost Load (0.5ms)[0m  SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = $1 ORDER BY microposts.created_at DESC LIMIT 1  [["id", "1"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voteable_id" = $1 AND "votes"."voteable_type" = $2 AND "votes"."vote" = 't'[0m  [["voteable_id", 1], ["voteable_type", "Micropost"]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.5ms)
