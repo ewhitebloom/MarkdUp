@@ -3,16 +3,16 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   include SessionsHelper
 
-  def create
-    @micropost = current_user.microposts.build(params[:micropost])
-    if @micropost.save
-     respond_to do |format|
-       format.html { redirect_to(@micropost) }
-       format.json { render json: @micropost }
-     end
-   else
-    format.json {
-      flash.now[:notice]="Post Error. Try Again."
+def create
+  @micropost = current_user.microposts.build(params[:micropost])
+  if @micropost.save
+   respond_to do |format|
+     format.html { redirect_to(@micropost) }
+     format.json { render json: @micropost }
+   end
+ else
+  format.json {
+    flash.now[:notice]="Post Error. Try Again."
     }
   end
 end
