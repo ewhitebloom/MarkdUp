@@ -8,8 +8,11 @@
 * the compiled file.
 *
 //= require jquery
-//= require jquery.inview.min.js
+//= require jquery_ujs
 //= require jquery.ui.all
-//= require turbolinks
 //= require_tree .
 */
+
+    $('#toggle').click( function() {
+      $('#listdiv').toggle(1000);
+    });

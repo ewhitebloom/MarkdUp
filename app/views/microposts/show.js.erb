@@ -1,0 +1,7 @@
+$('#show_more').append('<%= escape_javascript render(@microposts.next_page) %>');
+
+<% if @microposts.next_page %>
+  $('.pagination').replaceWith('<%= escape_javascript will_paginate(@microposts.next_page) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

@@ -9,8 +9,6 @@ class Micropost < ActiveRecord::Base
   validates :category, presence: true
   validates :user_id, presence: true
 
-  self.per_page = 10
-
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode
 
