@@ -19,14 +19,14 @@ function clearOverlays() {
   for (var i = 0; i < markersArray.length; i++ ) {
     markersArray[i].setMap(null);
   }
-  markersArray = new Array();
+  markersArray = [];
 }
 
 function clearPostWindows() {
   for (var i = 0; i < postwindows.length; i++ ) {
     postwindows[i].close();
   }
-  postwindows = new Array();
+  postwindows = [];
 }
 
 function getmarkersvoting() {
