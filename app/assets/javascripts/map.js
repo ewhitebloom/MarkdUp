@@ -15,6 +15,38 @@ $("#map_canvas").load(function(){
   $("#loader").hide();
 });
 
+function initialize() {
+
+  $(document).ready(function() {
+
+    var mapOptions = {
+      zoom: 14
+    };
+
+    map = new google.maps.Map(document.getElementById('map_canvas'),
+      mapOptions);
+
+    $.getJSON('/address.json', {}, function(location){
+
+     var address = new google.maps.LatLng(location[0],location[1]);
+
+     var currentlocation = new google.maps.Marker({
+      map: map,
+      position: address,
+      icon: '/assets/blue_dot.png'
+    });
+
+     map.setCenter(address);
+   });
+
+    google.maps.event.addListener(map, 'click', function(event) {
+      createMarker(event.latLng, "markername");
+    });
+
+    getmarkersvoting();
+  });
+}
+
 function clearOverlays() {
   for (var i = 0; i < markersArray.length; i++ ) {
     markersArray[i].setMap(null);
@@ -99,38 +131,6 @@ $.getJSON("/microposts/show.json", {}, function(json){
     });
   });
 });
-}
-
-function initialize() {
-
-  $(document).ready(function() {
-
-    var mapOptions = {
-      zoom: 14
-    };
-
-    map = new google.maps.Map(document.getElementById('map_canvas'),
-      mapOptions);
-
-    $.getJSON('/address.json', {}, function(location){
-
-     var address = new google.maps.LatLng(location[0],location[1]);
-
-     var currentlocation = new google.maps.Marker({
-      map: map,
-      position: address,
-      icon: '/assets/blue_dot.png'
-    });
-
-     map.setCenter(address);
-   });
-
-    google.maps.event.addListener(map, 'click', function(event) {
-      createMarker(event.latLng, "markername");
-    });
-
-    getmarkersvoting();
-  });
 }
 
 function createMarker(latlng, name) {
