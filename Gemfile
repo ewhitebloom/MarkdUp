@@ -18,7 +18,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'geocoder'
 gem 'thumbs_up'
 gem 'json', '1.8.1'
-gem 'rails-ajax', "~> 0.3.2.20131227"
 gem 'protected_attributes', '~>1.0.5'
 gem 'activeresource'
 gem 'addressable'
